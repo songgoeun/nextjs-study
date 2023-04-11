@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { Header } from '../Header';
+import { BasePageComponent } from '../Base';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -10,9 +12,12 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
     <div>
-      <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
-      <Link href="/users">Users List</Link> | <a href="/api/users">Users API</a>
-      {children}
+      <Head>{`Hubble`}</Head>
+      {/* <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
+      <Link href="/users">Users List</Link> | <a href="/api/users">Users API</a> */}
+
+      <Header />
+      <BasePageComponent>{children}</BasePageComponent>
       {/* <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
